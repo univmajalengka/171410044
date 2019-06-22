@@ -176,15 +176,15 @@ include("koneksi_barang.php");
         <th>Kode Barang</th>
         <th>Nama Barang</th>
         <th>Satuan Barang</th>
-        <th>Harga Beli</th>
-        <th>Harga Jual</th>
         <th>Jumlah Barang</th>
-        <th>Kode Jenis</th>
+        <th>Tanggal Masuk</th>
+        <th>Jumlah Masuk</th>
+        <th>Nama Jenis</th>
         <th>Action</th>
        </tr>
 <?php
     $no=1;
-    $query=("SELECT * FROM struktur_barang");
+    $query=("SELECT * FROM view_barang");
     $lihat = mysqli_query($con, $query) or die('Error, query failed. ' . mysqli_error());
     $jml_data=mysqli_num_rows($lihat);
     while($r=mysqli_fetch_array($lihat)){
@@ -194,10 +194,10 @@ include("koneksi_barang.php");
         <td><?php echo"$r[Kd_barang]";?></td>
         <td><?php echo"$r[Nm_barang]";?></td>
         <td><?php echo"$r[Satuan_barang]";?></td>
-        <td><?php echo"$r[Hrg_Beli]";?></td>
-        <td><?php echo"$r[Hrg_Jual]";?></td>
         <td><?php echo"$r[Jml_Barang]";?></td>
-        <td><?php echo"$r[Kd_Jenis]";?></td>
+        <td><?php echo"$r[Tgl_Masuk]";?></td>
+        <td><?php echo"$r[Jml_Masuk]";?></td>
+        <td><?php echo"$r[Nm_Jenis]";?></td>
         <td align="center"><a href="detail_barang.php?Kd_barang=<?=$r['Kd_barang'];?>"> Detail  |</a>
          <a href="hapusbarang.php?Kd_barang=<?= $r['Kd_barang'];?>"> Delete</a></td>
 
